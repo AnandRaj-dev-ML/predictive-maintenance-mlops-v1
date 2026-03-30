@@ -23,7 +23,6 @@ mlflow.set_experiment("engine_failure_training")
 
 api = HfApi()
 
-
 Xtrain_path = "hf://datasets/Rajanan/ds-predictive-engine-maintenance-v1/Xtrain.csv"
 Xtest_path = "hf://datasets/Rajanan/ds-predictive-engine-maintenance-v1/Xtest.csv"
 ytrain_path = "hf://datasets/Rajanan/ds-predictive-engine-maintenance-v1/ytrain.csv"
@@ -33,8 +32,7 @@ Xtrain = pd.read_csv(Xtrain_path)
 Xtest = pd.read_csv(Xtest_path)
 ytrain = pd.read_csv(ytrain_path)
 ytest = pd.read_csv(ytest_path)
-#ytrain = pd.read_csv(ytrain_path).squeeze()
-#ytest = pd.read_csv(ytest_path).squeeze()
+
 
 # Set the clas weight to handle class imbalance
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
